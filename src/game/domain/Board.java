@@ -99,7 +99,7 @@ public class Board extends JPanel{
         }
     }
 
-    private int countAliveNeighbours(int i, int j) {
+    public int countAliveNeighbours(int i, int j) {
         int startX = Math.max(i - 1, 0);
         int startY = Math.max(j - 1, 0);
         int endX = Math.min(i + 1, width/ cellSize - 1);
@@ -148,5 +148,19 @@ public class Board extends JPanel{
 
     public int getCellSize(){
         return cellSize;
+    }
+
+    @Override
+    public int getWidth() {
+        return width;
+    }
+
+    @Override
+    public int getHeight() {
+        return height;
+    }
+
+    public Cell[][] getCells() {
+        return cells;
     }
 }
